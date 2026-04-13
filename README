@@ -1,0 +1,4 @@
+apt install pdftotext        
+pdftotext ./'Chuong3_Lap trinh Shell Script.pdf'   "convert pdf to text"
+cat Chuong3_Lap\ trinh\ Shell\ Script.txt | grep string   # tim kiem tu khoa "string"
+more 'Chuong3_Lap\ trinh\ Shell\ Script.txt'  # xem file
