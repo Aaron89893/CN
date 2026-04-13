@@ -1,0 +1,125 @@
+🧱 1. Cú pháp cơ bản
+# comment
+print("Hello")   # in ra màn hình
+Python dùng indentation (thụt dòng) thay cho { }
+Không cần ;
+Phân biệt hoa thường
+📥📤 2. Input / Output
+name = input("Nhập tên: ")
+print("Xin chào", name)
+🔤 3. Biến
+a = 10
+b = 5.5
+name = "Python"
+❌ Không cần khai báo kiểu
+✔ Xem kiểu:
+print(type(a))
+🔢 4. Kiểu dữ liệu chính
+# Number
+x = 10        # int
+y = 5.5       # float
+
+# String
+s = "hello"
+
+# List
+lst = [1, 2, 3]
+
+# Tuple
+t = (1, 2, 3)
+
+# Set
+st = {1, 2, 3}
+
+# Dictionary
+d = {"name": "An", "age": 20}
+🔄 5. Ép kiểu
+int("10")     # 10
+float(5)      # 5.0
+str(123)      # "123"
+🔡 6. String (rất hay dùng)
+s = "python"
+
+len(s)        # độ dài
+s[0]          # truy cập ký tự
+s[1:4]        # cắt chuỗi
+
+"py" in s     # True
+
+s.upper()
+s.lower()
+s.strip()
+s.replace("py", "PY")
+s.split("t")
+📚 7. List (quan trọng)
+lst = [1, 2, 3]
+
+lst.append(4)
+lst.remove(2)
+lst[0] = 10
+
+len(lst)
+lst.sort()
+lst.reverse()
+🔐 8. Tuple (không đổi được)
+t = (1, 2, 3)
+print(t[0])
+🎯 9. Set
+s = {1, 2, 3}
+s.add(4)
+s.remove(2)
+🗂️ 10. Dictionary
+d = {"name": "An", "age": 20}
+
+print(d["name"])
+d["age"] = 21
+d["city"] = "HCM"
+
+for k, v in d.items():
+    print(k, v)
+➕ 11. Toán tử
+Số học
++  -  *  /  //  %  **
+So sánh
+==  !=  >  <  >=  <=
+Logic
+and  or  not
+Membership
+in
+not in
+🔀 12. Câu điều kiện
+if x > 10:
+    print("Lớn")
+elif x == 10:
+    print("Bằng")
+else:
+    print("Nhỏ")
+🔁 13. Vòng lặp
+for
+for i in range(5):
+    print(i)
+while
+while x < 5:
+    x += 1
+🧩 14. Hàm
+def add(a, b):
+    return a + b
+
+print(add(2, 3))
+📂 15. File (rất hay thi)
+# đọc file
+with open("file.txt", "r") as f:
+    data = f.read()
+
+# ghi file
+with open("file.txt", "w") as f:
+    f.write("Hello")
+
+# append
+with open("file.txt", "a") as f:
+    f.write("\nMore")
+⚠️ 16. Lỗi hay gặp
+❌ thiếu : sau if, for, def
+❌ sai indentation
+❌ quên ép kiểu khi cộng input:
+int(input())

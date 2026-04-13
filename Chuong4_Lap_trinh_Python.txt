@@ -23,7 +23,6 @@ Sử dụng được ngôn ngữ Python cơ bản
 Nội dung
 1. Giới thiệu ngôn ngữ Python
 2. Cơ bản về ngôn ngữ Python
-
 3. Kiểu dữ liệu
 4. Toán tử và biểu thức
 5. Cấu trúc điều khiển
