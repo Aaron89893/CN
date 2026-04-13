@@ -1,129 +1,145 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
 XỬ LÝ FILE CSV TRONG PYTHON
-1. Mở file csv, sau đó in nội dung file csv
-Cách 1:
-with open('university_records.csv', ‘r’) as f:
-print(f.read())
-Cách 2:
-f = open("university_records.csv", ‘r’)
-print(f.read())
-Một số mode đối với lệnh open()
-Ký tự
-‘r’
-‘w’
-‘a’
-‘r+’
-‘x’
+"""
 
-Mode
-Read (Mặc định)
-Write
-Append
-Read+Write
-Create
-
-Mô tả
-Mở file để đọc
-Mở file để ghi
-Mở file để thêm dữ liệu
-Mở file vừa đọc + ghi
-Tạo file mới
-
-2. Tạo file sinhvien.csv như sau:
-MSSV
-234
-234
-876
-
-HoTen
-Nguyễn Bình
-Lê Văn Tám
-Nguyễn Thị Bé
-
-NamSinh
-2000
-2003
-2001
-
-Khoa
-CNTT
-CNTT
-Kế toán
-
-Quequan
-HCM
-DN
-Long An
-
-Đọc file csv và in ra nội dung file
 import csv
-with open('university_records.csv') as f:
-reader = csv.reader(f)
-for col in reader:
-print(col)
-Để in từng cột thì sử dụng cách nào? => gợi ý dùng print(col[1])
-Để in từng dòng thì sử dụng cách nào? => gợi ý sử dụng phương thức
-readlines()
 
-3. Lưu dữ liệu vào file csv
-import csv
-with open('nhansu.csv', 'w') as f:
-new_file = csv.writer(f)
-new_file.writerow(['An', '25', 'IT Manager', 'HCM'])
-new_file.writerow(['Thành', '30', 'Developer', 'HCM'])
-Nếu file csv chưa tồn tại thì có cần tạo file trước khi lưu dữ liệu hay không?
-Sau khi chạy đoạn code trên, cho nhận xét? Kết quả lưu vào file như thế
-nào?
 
-4. Tạo file csv từ dữ liệu sẵn có
-import csv
-header = ['HoTen', 'Diachi', 'Thanhpho', 'Sdt']
-data = [
-['Tran Hung', '123 Nguyen Van Troi','HCM','12498654'],
-['Nguyen Tai', '55/32/1 Nguyen Du', 'HCM', '765438'],
-['Phan Thanh', '98 Ly Thai To','HCM','99876543'],
-['Nguyen Sang', '32/1 CMT8','DN','977653'],
-['Le luu', '32/9 Dong Nai','HCM', '98765]
-]
-with open('countries.csv', 'w', encoding='UTF8', newline='') as f:
-writer = csv.writer(f)
-writer.writerow(header) #Lưu dữ liệu của tiêu đề
-writer.writerows(data) #Lưu dữ liệu
+# =========================
+# 1. MỞ FILE CSV VÀ IN NỘI DUNG
+# =========================
 
-5. Tạo file csv từ file txt
-import csv
-# Mở file txt
-txt_file = open('sinhvien.txt', 'r')
-noidung = csv.reader(txt_file, delimiter=',')
-# Tạo file .csv mới.
-csv_file = open('sinhvien.csv', 'w', newline='')
-file_csv_moi = csv.writer(csv_file)
+def read_csv_way1():
+    print("\n=== Cách 1: read() ===")
+    with open('university_records.csv', 'r', encoding='utf-8') as f:
+        print(f.read())
 
-# Lưu noidung vào file csv.
-file_csv_moi.writerows(noidung)
-# Đóng file txt và csv đã mở ở trên.
-txt_file.close()
-csv_file.close()
 
-6. Sử dụng lệnh để tạo file nhansu.txt có nội dung như sau:
-(Mỗi cột cách nhau bằng 1 dấu tab)
-MANV
-HoTen
-Namsinh
-DiaDiem
-NV01
-Nguyen Van Tam 2000
-HCM
-NV02
-Dao Thi Tuyen
-2001
-HN
-NV03
-Le Thanh Trung 2004
-ĐN
--
+def read_csv_way2():
+    print("\n=== Cách 2: open() ===")
+    f = open('university_records.csv', 'r', encoding='utf-8')
+    print(f.read())
+    f.close()
 
-Tạo file nhansu.csv từ file nhansu.txt trên
-In ra tiêu đề của các cột trong file .csv
-Đọc và in ra nội dung file nhansu.txt
 
-
+# =========================
+# 2. ĐỌC FILE CSV BẰNG CSV MODULE
+# =========================
+
+def read_csv_module():
+    print("\n=== Đọc CSV bằng csv.reader ===")
+    with open('university_records.csv', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            print(row)
+
+    print("\n=== In từng cột (ví dụ cột 2) ===")
+    with open('university_records.csv', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) > 1:
+                print(row[1])
+
+    print("\n=== In từng dòng bằng readlines() ===")
+    with open('university_records.csv', encoding='utf-8') as f:
+        lines = f.readlines()
+        for line in lines:
+            print(line.strip())
+
+
+# =========================
+# 3. GHI FILE CSV
+# =========================
+
+def write_csv():
+    print("\n=== Ghi file nhansu.csv ===")
+    with open('nhansu.csv', 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['An', '25', 'IT Manager', 'HCM'])
+        writer.writerow(['Thành', '30', 'Developer', 'HCM'])
+
+    print("→ File sẽ được tạo nếu chưa tồn tại")
+    print("→ Nếu tồn tại, dữ liệu cũ sẽ bị ghi đè")
+
+
+# =========================
+# 4. TẠO CSV TỪ DỮ LIỆU SẴN
+# =========================
+
+def create_csv_from_data():
+    print("\n=== Tạo countries.csv ===")
+
+    header = ['HoTen', 'Diachi', 'Thanhpho', 'Sdt']
+    data = [
+        ['Tran Hung', '123 Nguyen Van Troi', 'HCM', '12498654'],
+        ['Nguyen Tai', '55/32/1 Nguyen Du', 'HCM', '765438'],
+        ['Phan Thanh', '98 Ly Thai To', 'HCM', '99876543'],
+        ['Nguyen Sang', '32/1 CMT8', 'DN', '977653'],
+        ['Le Luu', '32/9 Dong Nai', 'HCM', '98765']
+    ]
+
+    with open('countries.csv', 'w', encoding='utf-8', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerows(data)
+
+
+# =========================
+# 5. TẠO CSV TỪ FILE TXT
+# =========================
+
+def txt_to_csv():
+    print("\n=== Chuyển sinhvien.txt → sinhvien.csv ===")
+
+    with open('sinhvien.txt', 'r', encoding='utf-8') as txt_file:
+        content = csv.reader(txt_file, delimiter=',')
+
+        with open('sinhvien.csv', 'w', newline='', encoding='utf-8') as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerows(content)
+
+
+# =========================
+# 6. BÀI TẬP NHANSU.TXT → CSV
+# =========================
+
+def nhansu_txt_to_csv():
+    print("\n=== Tạo nhansu.csv từ nhansu.txt ===")
+
+    with open('nhansu.txt', 'r', encoding='utf-8') as f:
+        reader = csv.reader(f, delimiter='\t')
+
+        with open('nhansu_from_txt.csv', 'w', newline='', encoding='utf-8') as out:
+            writer = csv.writer(out)
+            writer.writerows(reader)
+
+    print("\n=== In tiêu đề ===")
+    with open('nhansu_from_txt.csv', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        print(header)
+
+    print("\n=== Nội dung file nhansu.txt ===")
+    with open('nhansu.txt', encoding='utf-8') as f:
+        print(f.read())
+
+
+# =========================
+# MAIN
+# =========================
+
+if __name__ == "__main__":
+    # Gọi từng hàm để test
+    # (bạn có thể comment bớt nếu chưa có file)
+
+    # read_csv_way1()
+    # read_csv_way2()
+    # read_csv_module()
+
+    write_csv()
+    create_csv_from_data()
+    txt_to_csv()
+    nhansu_txt_to_csv()
