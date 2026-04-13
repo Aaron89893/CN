@@ -112,6 +112,39 @@ else:
 for
 for i in range(5):
     print(i)
+
+2. range() nâng cao
+range(5)        # 0 → 4
+range(1, 5)     # 1 → 4
+range(1, 10, 2) # bước nhảy 2
+for i in range(1, 10, 2):
+    print(i)
+    
+🔹 3. FOR với list
+fruits = ["apple", "banana", "cherry"]
+
+for f in fruits:
+    print(f)
+
+🔹 4. FOR với index
+lst = [10, 20, 30]
+
+for i in range(len(lst)):
+    print(i, lst[i])
+
+🔹 5. FOR với enumerate (rất hay dùng)
+lst = ["a", "b", "c"]
+
+for i, value in enumerate(lst):
+    print(i, value)
+🔹 6. FOR với dictionary
+d = {"name": "An", "age": 20}
+
+for k in d:
+    print(k, d[k])
+for k, v in d.items():
+    print(k, v)
+
 while
 while x < 5:
     x += 1
