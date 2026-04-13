@@ -1,0 +1,47 @@
+XỬ LÝ FILE TEXT TRONG PYTHON
+1. Đọc nội dung và in ra màn hình nội dung của file
+Cách 1:
+taptin = open("file.txt", "r",encoding='utf-8')
+print (taptin.read())
+Cách 2:
+with open("file.txt") as file:
+data = file.read()
+print(data)
+2. Lệnh in ra n ký tự đầu tiên của file .txt
+file = open("file.txt", "r")
+print (file.read(10))
+Ý nghĩa của số 10 là gì?
+3. Lưu dữ liệu vào file .txt
+file = open('baitap.txt','w')
+file.write("Nội dung cần lưu \n")
+file.write("Nội dung cần lưu")
+file.close()
+Ý nghĩa của “\n” là gì?
+4. Đọc file.txt và in ra từng dòng
+with open("file.txt", "r") as file:
+data = file.readlines()
+for line in data
+print(line)
+Chỉnh và kiểm tra cú pháp các dòng code ở trên cho đúng để in ra từng dòng
+trong file.txt
+
+5. Sử dụng lệnh cat hoặc nano tạo 1 file tritue.txt với nội dung như sau:
+Trí tuệ nhân tạo là một ngành thuộc lĩnh vực khoa học máy tính.
+Mục tiêu là giúp máy tính có thể thực hiện các hành vi thông minh như con
+người.
+6. Sử dụng ngôn ngữ Python để thao tác trên file tritue.txt
+- Xuất nội dung của file này ra màn hình
+- Cho biết file tritue.txt có bao nhiêu dòng, bao nhiêu chữ, bao nhiêu ký tự?
+- Hiển thị 3 dòng đầu tiên của file này.
+- Hiển thị dòng thứ 2 và thứ 4
+- Thêm nội dung vào file tritue.txt
+Ngày nay, trí tuệ nhân tạo đang được quan tâm rất nhiều.
+Bởi nó đã mang lại hiệu quả rất lớn đối vỡi một vài lĩnh vực.
+
+7. Cho một danh sách có nội dung như sau
+lst = [''Ca dao,'Cá không ăn muối cá ương', 'Con cãi cha mẹ, 'Trăm đường con
+hư']
+Viết chương trình lưu nội dung từ danh sách này vào một file cadao.txt. Mỗi
+câu là một dòng trong file.
+
+

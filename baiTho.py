@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 baitho = [
     'Cái trống trường em',
     'Mùa hè cũng nghỉ',
