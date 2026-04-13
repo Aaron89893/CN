@@ -1,0 +1,3 @@
+apt install pdftotext
+pdftotext ./'Chuong3_Lap trinh Shell Script.pdf'
+cat Chuong3_Lap\ trinh\ Shell\ Script.txt | grep string
