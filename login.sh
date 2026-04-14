@@ -11,7 +11,7 @@ echo ""
 
 # Check
 if [[ "$input_user" == "$USERNAME" && "$input_pass" == "$PASSWORD" ]]; then
-    echo "Login successful ✅"
+    echo "Login successful"
 else
-    echo "Login failed ❌"
+    echo "Login failed"
 fi
