@@ -24,48 +24,34 @@ $?   # Exit status of last command
 
 ## String Comparison
 
-```bash
 =     # equal
 ==    # equal (preferred in [[ ]])
 !=    # not equal
 <     # less than (lexicographically)
 >     # greater than (lexicographically)
-```
 
 ### Example
-
-```bash
 if [ "$a" = "$b" ]; then
     echo "Equal"
 fi
-```
-
----
 
 ## 🔹 Integer (Number) Comparison
 
-```bash
 -eq   # equal
 -ne   # not equal
 -lt   # less than
 -le   # less than or equal
 -gt   # greater than
 -ge   # greater than or equal
-```
 
 ### Example
 
-```bash
 if [ "$a" -gt 10 ]; then
     echo "Greater than 10"
 fi
-```
-
----
 
 ## 🔹 File Tests
 
-```bash
 -e    # file exists
 -f    # regular file exists
 -d    # directory exists
@@ -73,45 +59,29 @@ fi
 -w    # writable
 -x    # executable
 -s    # file not empty
-```
 
 ### Example
 
-```bash
 if [ -f "file.txt" ]; then
     echo "File exists"
 fi
-```
-
----
 
 ## 🔹 Logical Operators
 
-```bash
 &&    # AND
 ||    # OR
 !     # NOT
-```
 
 ### Example
 
-```bash
 if [ "$a" -gt 5 ] && [ "$a" -lt 20 ]; then
     echo "Between 5 and 20"
 fi
-```
-
----
 
 ## 🔹 Recommended Modern Syntax
-
-```bash
 if [[ "$a" == "$b" ]]; then
     echo "Equal"
 fi
-```
-
----
 
 ## ⚡ Quick Summary
 
