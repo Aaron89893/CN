@@ -25,6 +25,16 @@ y = 5.5       # float
 # String
 s = "hello"
 
+split_string("a,b,c")     # ["a", "b", "c"]
+join_strings(["a", "b"], "-")     # "a-b"
+find_substring("hello", "ll")     # 2
+replace_substring("hello", "l", "x")  # "hexxo"
+reverse_string("hello")        # "olleh"
+to_uppercase("hello")         # "HELLO"
+to_lowercase("HELLO")         # "hello"
+trim_whitespace("  hi  ")     # "hi"
+capitalize_words("hello world")  # "Hello World"
+
 # List
 lst = [1, 2, 3]
 
