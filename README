@@ -12,8 +12,8 @@ $0   # Script name
 $1   # First argument
 $2   # Second argument
 $3   # Third argument ...
-$@   # All arguments (separately quoted)
-$*   # All arguments (as one string)
+$@   # All arguments (Keeps each argument separate)
+$*   # All arguments (Combines all arguments into one single string )
 $#   # Number of arguments
 
 ## Process & execution info
